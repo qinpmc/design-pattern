@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //闭包作用--封装变量
+    var mult = function(){
+        var cache = {}; //用于缓存计算结果
+        return function (){
+            var args = Array.prototype.join.call(arguments,",");
+            if(args in cache){
+                return cache[args];
+            }
+            var a = 1;
+            for(var i=0;i<arguments.length;i++ ){
+                a = a*arguments[i];
+            }
+            return cache[args] = a;
+        }
+    }
+
+    // 闭包作用---延续局部变量寿命
+    var report = (function(){
+        var imgs = [];
+        return function (src){
+            var img = new Image();
+            imgs.push(img);
+            img.src = src;
+        }
+    })()
+
+    // 这种方式上传图片有bug，函数report_withBug 执行完毕，图片可能没有来得及发出http请求
+    // 此时函数作用域销毁，img 局部变量被销毁。
+    var report_withBug = function(src){
+        var img = new Image();
+        img.src = src;
+    }
+
+
+</script>
+</body>
+</html>

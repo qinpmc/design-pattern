@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function PerformanceA(){}   //策略A 类
+    PerformanceA.prototype.calculate = function(salary){
+        return salary*4;
+    }
+
+    function PerformanceB(){} //策略B 类
+    PerformanceB.prototype.calculate = function(salary) {
+        return salary * 3;
+    }
+
+    function PerformanceC(){} //策略C 类
+    PerformanceC.prototype.calculate = function(salary) {
+        return salary * 2;
+    }
+
+    // 奖金类
+    var Bonus = function(salary,strategy){
+        this.salary = salary;
+        this.strategy = strategy;
+    }
+
+    Bonus.prototype.setSalary = function(salary){
+        this.salary = salary;
+    }
+    Bonus.prototype.setStrategy = function(strategy){
+        this.strategy = strategy;
+    }
+    Bonus.prototype.getSalary = function(){
+        return this.strategy.calculate(this.salary);
+    }
+
+    var bonus = new Bonus();
+    bonus.setSalary(2000);
+    bonus.setStrategy( new PerformanceB);
+    console.log(bonus.getSalary());
+
+
+</script>
+</body>
+</html>

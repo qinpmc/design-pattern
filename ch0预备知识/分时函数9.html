@@ -6,7 +6,57 @@
 </head>
 <body>
 <script>
-    
+    // 分时函数
+    var timeChunk = function(ary,fn,count){
+        var obj,t;
+        var len = ary.length;
+        var start = function(){
+            for(var i=0;i<Math.min(count || 1,ary.length);i++){
+                var obj = ary.shift();
+                fn(obj);
+            };
+        }
+        return function (){
+            t = setInterval(function(){
+                if(ary.length ===0){
+                    return clearInterval(t);
+                }
+                start();
+            },200)
+        }
+    }
+    var ary = [];
+    for(var i = 1;i<1000;i++){
+        ary.push(i);
+    }
+    var renderList = timeChunk(ary,function(n){
+        var div = document.createElement("div");
+        div.innerHTML = n;
+        document.body.appendChild(div);
+    },8);
+    renderList();
+
+
+
+/*    var rowCount = 20000,divideInto = 4;
+    var chunkSize = rowCount/divideInto;
+    var iteration = 0;
+    setTimeout(function generateRows() {
+        var base = (chunkSize)*iteration;
+        for(var i=0;i<chunkSize;i++){
+            var tr = document.createElement("tr");
+            for(var t=0;t<6;t++) {
+                var td = document.createElement("td");
+                td.appendChild(document.createTextNode((i + base)+"," + t+","+iteration));
+                tr.appendChild(td);
+            };
+            tbody.appendChild(tr);
+        }
+        iteration++;
+        if(iteration<divideInto){
+            setTimeout(generateRows,0);
+        }
+    },0)*/
 </script>
 </body>
 </html>

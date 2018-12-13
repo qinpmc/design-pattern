@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Singleton(name){
+        this.name = name;
+    }
+    Singleton.getInstance = (function () {
+        var instance = null;
+        return function (name) {
+            if (!instance) {
+                instance = new Singleton(name);
+            }
+            return instance;
+        }
+    })();
+    var a1 = Singleton.getInstance("a");
+    var a2 = Singleton.getInstance("a");
+    console.log(a1===a2);//true
+</script>
+</body>
+</html>

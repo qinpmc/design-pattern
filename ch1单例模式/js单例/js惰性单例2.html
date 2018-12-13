@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="height: 100%">
+<button id="login"> Login</button>
+<script>
+
+    // /惰性单例 ---点击后才创建单例登陆
+    function getSingle(fn){
+        var result;  //存储单例
+        return function (){
+            return result || (result = fn.apply(this,arguments));
+        }
+    }
+
+    function createLoginLayer(){
+        var div = document.createElement("div");
+        div.innerHTML = "Login Window";
+        div.style.display = "none";
+        document.body.appendChild(div);
+        return div;
+    }
+    /*
+    var createSingleLayer = getSingle(createLoginLayer);
+    document.getElementById("login").onclick = function(){
+        var loginLayer = createSingleLayer();
+        loginLayer.style.display = "block";
+    }*/
+
+    ///////////////////////////////////////////////////
+
+    var bindEvent = getSingle(function(){
+        document.getElementById("login").addEventListener("click",function(){
+            console.log("body click!");
+        },false)
+        return 1;
+    })
+    bindEvent(); // 执行完毕后，getSingle 中reuslt 变为1
+    bindEvent(); // reuslt 为1，短路操作  result || (result = fn.apply(this,arguments)
+    bindEvent(); //同上
+</script>
+</body>
+</html>

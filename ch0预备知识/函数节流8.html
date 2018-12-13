@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="content" style="width: 300px;height: 300px;border:1px solid indianred"></div>
+<script>
+
+    var total =0;
+    var content = document.getElementById("content");
+    function count(){
+        console.log("e",arguments);
+        content.innerHTML = total++;
+    }
+    //防抖 节流
+
+    //节流
+    const throttle = (fn,wait = 100) => {
+        return function (){
+            if (fn.timer) return;
+            fn.timer = setTimeout(() =>{
+                fn.apply(this,arguments);
+                fn.timer = null
+            },wait)
+        }
+    }
+    //content.onmousemove = throttle(count,1000);
+
+    const debouce = (fn,wait =30) =>{
+        return function (){
+            clearTimeout(fn.timer);
+            fn.timer = setTimeout(fn.bind(this,...arguments),wait)
+        }
+
+    }
+    content.onmousemove = debouce(count,1000);
+</script>
+</body>
+</html>

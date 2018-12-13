@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="content" style="width: 300px;height: 300px;border:1px solid indianred"></div>
+<script>
+
+    var total =0;
+    var content = document.getElementById("content");
+    function count(){
+        console.log("e",arguments);
+        content.innerHTML = total++;
+    }
+    //防抖 节流
+
+    //节流
+    function throttle(func,wait){
+        var previous = 0;
+        return function (){
+            var now = Date.now();
+            var args = arguments;
+            if(now - previous >wait){
+                func.apply(this,args);
+                previous = now;
+            }
+        }
+    }
+    //content.onmousemove = count; //不做处理频繁触发
+    //content.onmousemove = throttle(count,1000); // 鼠标频繁移动，每1s执行一次
+
+    function debounce(fn,delay){
+        var timer = null;
+        return function (){
+            clearTimeout(timer);
+            timer = setTimeout(function(){
+                fn.apply(this)
+            },delay)
+        }
+    }
+    //content.onmousemove = debounce(count,1000); //鼠标频繁移动，鼠标移动结束后1s执行一次
+
+    content.onmousemove = function(e){
+        debounce(count,1000)(e)
+    }
+
+    // 立即执行函数，但 wait 时间内只能执行一次
+    function debounce2(func, wait) {
+        var timeout;
+        return function () {
+            var context = this;
+            var args = arguments;
+            if (timeout) clearTimeout(timeout);
+            var callNow = !timeout;
+            timeout = setTimeout(function () {
+                timeout = null;
+            }, wait)
+            if (callNow) func.apply(context, args)
+        }
+    }
+
+</script>
+</body>
+</html>

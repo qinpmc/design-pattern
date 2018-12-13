@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 函数柯里化
+    var currying = function(fn){
+        var args = [];
+        return function inner(){
+            if(arguments.length ==0){
+                return fn.apply(this,args);
+            }else{
+                [].push.apply(args,arguments);
+                return inner;
+            }
+        }
+    }
+
+    var cost = (function () {
+        var money = 0;
+        return function () {
+            for (var i = 0, l = arguments.length; i < l; i++) {
+                money += arguments[i];
+            }
+            return money;
+        }
+    })();
+    var cost = currying(cost);    // 转化成 currying 函数
+    cost(100);//
+    cost(200);//
+    console.log(cost.bind({name:"qq1"})());     //求值并输出：300
+
+
+    // 函数柯里化2
+    function curry(fn){
+        var args = Array.prototype.slice.call(arguments,1);// 存储第一次传入的参数
+        return function (){
+            var innerArgs = Array.prototype.slice.call(arguments);
+            var finalArgs = args.concat(innerArgs); //合并函数参数
+            return fn.apply(null,finalArgs);
+        }
+    }
+    function  add(num1,num2){
+        return num1+num2;
+    }
+    var fn1 = curry(add,3);
+    console.log(fn1(5)); //8
+
+</script>
+</body>
+</html>

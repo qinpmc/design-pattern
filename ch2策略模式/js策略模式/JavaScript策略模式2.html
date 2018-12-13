@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var strategies = {
+        "A" :function(salary){
+            return salary *4;
+        },
+        "B" :function(salary){
+            return salary *3;
+        },
+        "C" :function(salary){
+            return salary *3;
+        }
+    }
+    function calculateBonus (performance,salary){
+        return strategies[performance](salary);
+    }
+    console.log(calculateBonus("B",2000));
+
+</script>
+</body>
+</html>

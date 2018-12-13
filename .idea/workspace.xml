@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91e1cd5b-b385-4c2e-b02d-8689598ff17b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch2策略模式/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch2策略模式/js策略模式/类java版策略模式1.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch2策略模式/js策略模式/JavaScript策略模式2.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch1单例模式/README.md" afterPath="$PROJECT_DIR$/ch1单例模式/README.md" />
     </list>
     <ignored path="design pattern.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,11 +24,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="类java版策略模式1.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="类java版策略模式1.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ch2策略模式/js策略模式/类java版策略模式1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4823386">
+            <state vertical-scroll-proportion="-11.6470585">
               <caret line="36" column="38" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JavaScript策略模式2.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ch2策略模式/js策略模式/JavaScript策略模式2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6699147">
+              <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -76,6 +84,8 @@
         <option value="$PROJECT_DIR$/ch2策略模式/js策略模式/类java版策略模式1.js" />
         <option value="$PROJECT_DIR$/ch2策略模式/js策略模式/类java版策略模式1.js.html" />
         <option value="$PROJECT_DIR$/ch2策略模式/js策略模式/类java版策略模式1.html" />
+        <option value="$PROJECT_DIR$/ch2策略模式/js策略模式/JavaScript策略模式.html" />
+        <option value="$PROJECT_DIR$/ch2策略模式/js策略模式/JavaScript策略模式2.html" />
       </list>
     </option>
   </component>
@@ -533,8 +543,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ch2策略模式/js策略模式/类java版策略模式1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4823386">
+        <state vertical-scroll-proportion="-11.6470585">
           <caret line="36" column="38" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch2策略模式/js策略模式/JavaScript策略模式2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6699147">
+          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
           <folding />
         </state>
       </provider>

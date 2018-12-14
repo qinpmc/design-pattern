@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="count">点我</button>
+    <div id="show"></div>
+<script>
+    var Event = {
+        clientList :{},
+        listen:function(key,fn){
+            if(!this.clientList[key]){
+                this.clientList[key] = [];
+            }
+            this.clientList[key].push(fn);
+        },
+        trigger:function(){
+            var key = Array.prototype.shift.call(arguments); // 去除key
+            var fns = this.clientList[key];
+            if(!key || fns.length==0 ){
+                return false;
+            }
+            for(var i= 0,fn;fn=fns[i++];){
+                fn.apply(this,arguments);
+            }
+        },
+        remove:function(key,fn){
+            var fns = this.clientList[key];
+            if(!fns){  // 如果没有对应的 key 订阅者，直接返回
+                return false;
+            }
+            if(!fn){  // 没有传入要移出的监听函数，删除全部的监听函数
+                fns && (fns.length=0);
+            }else{
+                for(var len=fns.length-1;len>=0;len--){
+                    var _fn = fns[len];
+                    if(_fn ===fn){
+                        fns.splice(len,1);
+                    }
+                }
+            }
+        }
+    }
+
+    var a = (function(){
+        var count = 0;
+        var btn = document.getElementById("count");
+        btn.addEventListener("click",function(){
+            Event.trigger("add",++count);
+        },false)
+    })();
+    var b = (function(){
+        var show = document.getElementById("show");
+        Event.listen("add",function(count){
+            show.innerHTML = count;
+        })
+    })()
+</script>
+</body>
+</html>

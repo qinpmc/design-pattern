@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var salesOffice = {
+        clientList:[],
+        listen:function(fn){
+            this.clientList.push(fn);
+        },
+        trigger: function () {
+            for(var i= 0,fn;fn=this.clientList[i++];){
+                fn.apply(this,arguments);
+            }
+        }
+    }
+    salesOffice.listen(function(price,area){
+        console.log("A customer",price,area);
+    })
+    salesOffice.listen(function(price,area){
+        console.log("B customer",price,area);
+    })
+    salesOffice.trigger(200,80); // A customer 200 80;  B customer 200 80
+</script>
+</body>
+</html>

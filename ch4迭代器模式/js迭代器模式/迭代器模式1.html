@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var each = function(ary,cb){
+        for(var i=0;i<ary.length;i++){
+            cb.call(ary[i],i,ary[i]);
+        }
+    }
+
+    // 比较两个数组元素是否相同
+    var compare = function(ary1,ary2){
+        var changed = 0;
+        if(ary1.length!=ary2.length){
+            return false;
+        }
+
+        each(ary1,function(index,item){
+            if(item!=ary2[index]){
+                changed = 1;
+            }
+        })
+        return changed !== 1;
+    }
+    console.log(compare([1,2,3],[1,2,3]));
+
+</script>
+</body>
+</html>

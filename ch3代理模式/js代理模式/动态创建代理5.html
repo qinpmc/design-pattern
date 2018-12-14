@@ -6,6 +6,8 @@
 </head>
 <body>
 <script>
+
+    //通过传入高阶函数这种更加灵活的方式，可以为各种计算方法创建  缓存代理
     function plus(){
         var a = 0;
         for(var i=0;i<arguments.length;i++){
@@ -22,7 +24,7 @@
     }
 
     function createProxy(fn){
-        var cache = [];
+        var cache = []; //缓存计算成本高的计算结果
         return function (){
             var args = Array.prototype.join.call(arguments,",");
             if(cache[args]){

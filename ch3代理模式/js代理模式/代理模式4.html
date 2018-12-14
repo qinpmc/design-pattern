@@ -7,16 +7,20 @@
 <body>
 <script>
     // 虚拟代理在惰性加载中的应用
+
+    //将要执行的函数将全部被放到缓存队列中，这些逻辑都是 在 miniConsole 代理对象中完成实现的。
+    // 等用户按下 F2 唤出控制台的时候，才开始加载真正的 miniConsole.js的代码
+    // 加载完成之后将遍历 miniConsole 代理对象中的缓存函数队列，同时依次 执行它们
     var a=1;
     var a=100;
     var miniConsole = (function(){
         var cache = [];
         var handler = function(ev){
-            if(ev.keyCode ===113){
+            if(ev.keyCode ===113){   // 按下F2键后，才加载真正的miniConsole
                 var script = document.createElement("script");
                 script.onload = function(){
                     for(var i= 0,fn;fn = cache[i++];){
-                        fn();
+                        fn();  // 加载完成miniConsole.js 后，再依次执行
                     }
                 }
                 script.src = "miniConsole.js";
@@ -28,7 +32,7 @@
         return {
             log: function () {
                 var args = arguments;
-                cache.push(function(){
+                cache.push(function(){   //先缓存所有的操作函数
                     return miniConsole.log.apply(miniConsole,args);
                 })
             }

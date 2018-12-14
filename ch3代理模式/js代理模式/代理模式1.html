@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Flower(){}
+    var xiaoming  = {
+        sendFlower:function(target){
+            var flower = new Flower();
+            target.receiveFlower(flower);
+        }
+    }
+    var proxy = {
+        receiveFlower:function(flower){
+            girl.receiveFlower(flower);
+        }
+    }
+    var girl = {
+        receiveFlower:function(flower){
+            console.log("收到花："+flower);
+        }
+    }
+    xiaoming.sendFlower(proxy);
+
+</script>
+</body>
+</html>

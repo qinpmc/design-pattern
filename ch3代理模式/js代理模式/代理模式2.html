@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //虚拟代理实现图片预加载
+    var myImg = (function(){
+        var imgNode = document.createElement("img");
+        document.body.appendChild(imgNode);
+        return {
+            setSrc :function(src){
+                imgNode.src = src;
+            }
+        }
+    })();
+
+    var proxyImg = (function(){
+        var img = new Image();
+        img.onload = function(){
+            console.log(this);
+            myImg.setSrc(this.src);
+        };
+        return{
+            setSrc:function(src){
+                myImg.setSrc("./1.png");  //初始占位图片
+                img.src = src;
+            }
+        }
+    })();
+    //proxyImg.setSrc();
+    proxyImg.setSrc("./2.png");
+
+
+
+    //////////////////////////////////////////
+
+
+    var myImg2 = (function(){
+        var imgNode = document.createElement("img");
+        document.body.appendChild(imgNode);
+        return function(src){
+                imgNode.src = src;
+        }
+    })();
+    var proxyImg2 = (function(){
+        var img = new Image();
+        img.onload = function(){
+            console.log(this);
+            myImg2(this.src);
+        };
+        return function(src){
+                myImg2("./1.png");  //初始占位图片
+                img.src = src;
+        }
+    })();
+
+    proxyImg2("./2.png");
+
+
+</script>
+</body>
+</html>

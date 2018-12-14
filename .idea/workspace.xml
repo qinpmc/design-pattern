@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91e1cd5b-b385-4c2e-b02d-8689598ff17b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4迭代器模式/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4迭代器模式/js迭代器模式/迭代器2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4迭代器模式/js迭代器模式/迭代器3.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch4迭代器模式/js迭代器模式/迭代器模式1.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch5发布订阅模式/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch5发布订阅模式/发布订阅模式.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch3代理模式/js代理模式/代理模式3.html" afterPath="$PROJECT_DIR$/ch3代理模式/js代理模式/代理模式3.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch3代理模式/js代理模式/代理模式4.html" afterPath="$PROJECT_DIR$/ch3代理模式/js代理模式/代理模式4.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch3代理模式/js代理模式/动态创建代理5.html" afterPath="$PROJECT_DIR$/ch3代理模式/js代理模式/动态创建代理5.html" />
     </list>
     <ignored path="design pattern.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -106,11 +101,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="代理模式3.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="代理模式3.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ch3代理模式/js代理模式/代理模式3.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8201701">
+            <state vertical-scroll-proportion="-19.852942">
               <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ch5发布订阅模式/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor vertical-scroll-proportion="0.54545456">
+                <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="发布订阅模式.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ch5发布订阅模式/发布订阅模式.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.54678005">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -169,6 +187,8 @@
         <option value="$PROJECT_DIR$/ch3代理模式/js代理模式/动态创建代理5.html" />
         <option value="$PROJECT_DIR$/ch3代理模式/js代理模式/代理模式4.html" />
         <option value="$PROJECT_DIR$/ch3代理模式/js代理模式/代理模式3.html" />
+        <option value="$PROJECT_DIR$/ch5发布订阅模式/README.md" />
+        <option value="$PROJECT_DIR$/ch5发布订阅模式/发布订阅模式.html" />
       </list>
     </option>
   </component>
@@ -238,57 +258,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ch4迭代器模式" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="design pattern" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="design-pattern" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ch4迭代器模式" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js迭代器模式" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="design pattern" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="design-pattern" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ch3代理模式" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="design pattern" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="design-pattern" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ch3代理模式" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js代理模式" />
+              <option name="myItemId" value="ch5发布订阅模式" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -305,11 +275,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\notes\design-pattern\ch5发布订阅模式" />
       <recent name="F:\notes\design-pattern\ch4迭代器模式" />
       <recent name="F:\notes\design-pattern\ch3代理模式\js代理模式" />
       <recent name="F:\notes\design-pattern\ch3代理模式" />
       <recent name="F:\notes\design-pattern\ch2策略模式" />
-      <recent name="F:\notes\design-pattern" />
     </key>
   </component>
   <component name="RunManager">
@@ -377,9 +347,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2090813" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2090813" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -703,8 +673,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ch3代理模式/js代理模式/代理模式3.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8201701">
+        <state vertical-scroll-proportion="-19.852942">
           <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch5发布订阅模式/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor vertical-scroll-proportion="0.54545456">
+            <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch5发布订阅模式/发布订阅模式.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54678005">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>

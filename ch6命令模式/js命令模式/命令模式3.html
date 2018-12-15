@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="ball" style="position: absolute;background: #000;width: 50px;height: 50px;"></div>
+<div style="position: absolute;top:100px">
+    小球目标位置：<input type="text" id="pos">
+    <button id="moveBtn">开始移动</button>
+    <button id="cancelBtn">取消</button>
+</div>
+
+<script>
+    // 撤销命令
+    var ball = document.getElementById("ball");
+    var pos = document.getElementById("pos");
+    var moveBtn = document.getElementById("moveBtn");
+    var cancelBtn = document.getElementById("cancelBtn");
+
+    var MoveCommand = function(receiver,pos){
+        this.receiver = receiver;
+        this.pos = pos;
+        this.oldPos = null;
+    }
+    MoveCommand.prototype.execute = function(){  //执行命令
+        this.receiver.start("left",this.pos,1000,'linear'); //执行动画的start方法开始运动
+        this.oldPos = this.receiver.dom.getBoundingClientRect()["left"]; //存储初始位置
+    }
+    MoveCommand.prototype.undo = function(){   // 撤销命令
+        this.receiver.start("left",this.oldPos,1000,'linear');
+    }
+    var moveCommand;
+    moveBtn.onclick = function(){
+        var animate = new Animation(ball);
+        moveCommand = new MoveCommand(animate,pos.value);
+        moveCommand.execute();
+    }
+    cancelBtn.onclick = function(){
+        moveCommand.undo();
+    }
+
+
+    /*
+     * t: current time（当前时间）；
+     * b: beginning value（初始值）；
+     * c: change in value（变化量）；
+     * d: duration（持续时间）。
+     */
+    var tween = {
+        linear:function(t,b,c,d){
+            return c*t/d+b;
+        },
+        easeIn:function(t,b,c,d){
+            return c*(t/=d)*t +b;
+        },
+        strongEaseIn:function(t,b,c,d){
+            return c*(t/=d)*t*t*t*t+b;
+        },
+        strongEaseOut:function(t,b,c,d){
+            return c*((t=t/d-1)*t*t*t*t+1)+b;
+        }
+    }
+    function Animation(dom){
+        this.dom = dom;              //运动的节点
+        this.startTime = 0;         //动画开始时间
+        this.startPos = 0;          //动画起始位置
+        this.endPos = 0;            //动画结束位置
+        this.propertyName =null;   // dom节点需要被修改的属性
+        this.easing = null;         //动画算法
+        this.duration = null;       //动画持续时间
+    }
+
+    Animation.prototype.start = function(propertyName,endPos,duration,easing){
+        this.startTime = +new Date();
+        this.startPos = this.dom.getBoundingClientRect()[propertyName];
+        this.propertyName = propertyName;
+        this.duration = duration;
+        this.easing = tween[easing];
+        this.endPos = endPos;
+        var self =this;
+        var timer = setInterval(function(){
+            if(self.step() === false){
+                clearInterval(timer);
+            }
+        },20);
+    }
+    Animation.prototype.step = function(){
+        var t = + new Date();
+        if(t>=this.startTime+this.duration){
+            this.update(this.endPos);
+            return false;
+        }
+        var pos = this.easing(t-this.startTime,this.startPos,this.endPos - this.startPos,this.duration);
+        this.update(pos);
+    }
+    Animation.prototype.update = function (pos) {
+        this.dom.style[this.propertyName] = pos+"px";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var Iterator = function(obj){
+        var current = 0;
+        var next = function(){
+            current++;
+        };
+        var isDone = function(){
+            return current >=obj.length;
+        }
+        var getCurrItem = function(){
+            return obj[current]
+        }
+        return {
+            next:next,
+            isDone:isDone,
+            getCurrItem:getCurrItem
+        }
+    }
+
+    var compare = function(iterator1,iterator2){
+        if(iterator1.getCurrItem()!=iterator2.getCurrItem()){ //防止为空
+            return false;
+        }
+        while(!iterator1.isDone() && !iterator2.isDone()){
+            if(iterator1.getCurrItem()!=iterator2.getCurrItem()){
+                return false;
+            }
+            iterator1.next();
+            iterator2.next();
+        }
+        return true;
+    }
+    var iter1 = Iterator([1,2,3]);
+    var iter2 = Iterator([]);
+    console.log(compare(iter1,iter2));
+
+</script>
+</body>
+</html>

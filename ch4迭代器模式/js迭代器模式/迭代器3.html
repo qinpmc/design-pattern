@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 在不同的浏览器环境下，选择不同的上传方式：
+    // - 使用浏览器的上传控件进行上传速度快，可以暂停和续传，所以优先使用控件上传；
+    // - 如果浏览器没有安装上传控件，则使用 Flash上传
+    // - 如果连 Flash也没安装，使用浏览器原生的表单上传
+
+
+    //缺点：1 难以阅读，充斥 try catch/ if else 分支
+    //        2 违反开闭原则 ，后期增加其他上传方式，需继续增加分支
+    var getUploadObj = function () {
+        try{
+            return new ActiveXObject("TXFTNActiveX.FTNUpload");
+        }catch (e){
+            if(supportFlash()){
+                var str = "<object type='application/x-shockWave-flash'></object>";
+                var dom = document.createElement("div");
+                dom.innerHTML = str;
+                return document.body.appendChild(dom);
+            }else{
+                var str = "<input name='file' type='file' >";
+                var dom = document.createElement("div");
+                dom.innerHTML = str;
+                return document.body.appendChild(dom);
+            }
+        }
+    }
+    function supportFlash(){
+        return false;
+    }
+
+
+    // 重构-------------
+    function getActiveUploadObj(){
+        try{
+            return new ActiveXObject("TXFTNActiveX.FTNUpload");
+        }catch (e){
+            return false;
+        }
+    }
+
+    function getFlashLoadObj(){
+        if(supportFlash()){
+            var str = "<object type='application/x-shockWave-flash'></object>";
+            var dom = document.createElement("div");
+            dom.innerHTML = str;
+            return document.body.appendChild(dom);
+        }
+        return false;
+    }
+
+    function getFormLoadObj(){
+        var str = "<input name='file' type='file' >";
+        var dom = document.createElement("div");
+        dom.innerHTML = str;
+        return document.body.appendChild(dom);
+    }
+
+    var iteratorLoadObj = function(){
+        for(var i= 0,fn;fn=arguments[i++];){
+            var uploadObj = fn();
+            if(uploadObj!==false){
+                return uploadObj;
+            }
+        }
+    }
+    var uploadObj = iteratorLoadObj(getActiveUploadObj,getFlashLoadObj,getFormLoadObj);
+
+    // 后期如果增加
+    var getWebkitUploadObj = function(){     // 具体代码略
+     };
+    var uploadObj = iteratorLoadObj(getActiveUploadObj,getFlashLoadObj,getFormLoadObj,getWebkitUploadObj);
+
+</script>
+</body>
+</html>

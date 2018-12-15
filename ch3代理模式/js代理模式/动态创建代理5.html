@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    //通过传入高阶函数这种更加灵活的方式，可以为各种计算方法创建  缓存代理
+    function plus(){
+        var a = 0;
+        for(var i=0;i<arguments.length;i++){
+            a+=arguments[i];
+        }
+        return a;
+    }
+    function multi(){
+        var a=1;
+        for(var i=0;i<arguments.length;i++){
+            a*=arguments[i];
+        }
+        return a;
+    }
+
+    function createProxy(fn){
+        var cache = []; //缓存计算成本高的计算结果
+        return function (){
+            var args = Array.prototype.join.call(arguments,",");
+            if(cache[args]){
+                return cache[args];
+            }
+            return cache[args] = fn.apply(this,arguments);
+        }
+    }
+
+    var proxyMulti = createProxy(multi);
+    var proxyPlus = createProxy(plus);
+    console.log(proxyMulti(1,2,3,4,5));
+
+</script>
+</body>
+</html>

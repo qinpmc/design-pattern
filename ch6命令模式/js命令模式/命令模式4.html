@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<button id="replay">回放</button>
+<body>
+    <script>
+        var Hero = {
+            attack:function(){
+                console.log("1--attack");
+            },
+            defence:function(){
+                console.log("2--defence");
+            },
+            jump:function(){
+                console.log("3--jump");
+            },
+            crouch:function(){
+                console.log("4--crouch");
+            }
+        }
+
+        var makeCommand = function(receiver,state){
+            return function (){
+                receiver[state]();
+            }
+        }
+
+        var commands = {
+            "119":"jump",
+            "115":"crouch",
+            "97":"defence",
+            "100":"attack"
+        }
+
+        var commandStack = [];
+        document.onkeypress = function(ev){
+            var keyCode = ev.keyCode;
+            var command = makeCommand(Hero,commands[keyCode]);
+            if(command){
+                command();
+                commandStack.push(command);
+            }
+        }
+
+        var replayBtn = document.getElementById("replay");
+        replayBtn.onclick = function(){
+            var command;
+            while (command = commandStack.shift()){
+                command();
+            }
+        }
+    </script>
+</body>
+</html>

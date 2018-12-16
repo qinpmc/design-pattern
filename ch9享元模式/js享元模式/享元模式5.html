@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 对象池创建
+    var objectPoolFactory =function(createObjfn){
+        var objectPool = [];
+        return {
+            create:function(){
+                var obj;
+                if(objectPool.length===0){
+                    obj = createObjfn(this,arguments);  //创建新对象
+                }else{
+                    obj= objectPool.shift();  //取出对象池中对象
+                }
+                return obj;
+            },
+            recover:function(obj){ //回收对象
+                objectPool.push(obj);
+            }
+        }
+    };
+
+    var iframeFactory = objectPoolFactory(function(){
+        var iframe = document.createElement("iframe");
+        document.body.appendChild(iframe);
+        iframe.onload = function(){
+            iframe.onload = null;
+            iframeFactory.recover(iframe);  //回收对象
+        }
+        return iframe;
+    });
+
+    var iframe1 = iframeFactory.create();
+    iframe1.src = "http://www.baidu.com";
+    var iframe2 = iframeFactory.create();
+    iframe2.src = "http://www.qq.com";
+
+    setTimeout(function(){
+        var iframe3 = iframeFactory.create();  //第一个iframe 由baidu 变为 163
+        iframe3.src = "http://www.163.com";
+    },5000)
+</script>
+</body>
+</html>

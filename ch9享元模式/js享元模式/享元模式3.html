@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var id =0;
+    window.startUpload = function(type,files){
+        for(var i= 0,file;file=files[i++];) {
+            var uploadObj = new Upload(type, file.fileName, file.fileSize);
+            uploadObj.init(id++);
+        }
+    }
+
+    var Upload = function(type,fileName,fileSize){
+        this.type = type;
+        this.fileName = fileName;
+        this.fileSize = fileSize;
+        this.dom = null;
+    }
+    Upload.prototype.init = function(id){
+        var that = this;
+        this.id = id;
+        this.dom = document.createElement("div");
+        this.dom.innerHTML = "<span>文件名称： "+this.fileName+", 文件大小： "+this.fileSize+"</span>"+
+                        "<button class='del'>删除</button>";
+        this.dom.querySelector(".del").onclick = function(){
+            that.delFile();
+        }
+        document.body.appendChild(this.dom);
+    }
+    Upload.prototype.delFile = function(){
+        if(this.fileSize<3000){
+            return this.dom.parentNode.removeChild(this.dom);
+        }
+        if(window.confirm("确定删除文件？ "+this.fileName)){
+            return this.dom.parentNode.removeChild(this.dom);
+        }
+    }
+
+    startUpload("plugin",[
+        {
+            fileName:"1.txt",
+            fileSize:1000
+        },
+        {
+            fileName:"2.txt",
+            fileSize:3000
+        },
+        {
+            fileName:"3.txt",
+            fileSize:5000
+        }
+    ]);
+    startUpload("flash",[
+        {
+            fileName:"4.txt",
+            fileSize:1000
+        },
+        {
+            fileName:"5.txt",
+            fileSize:3000
+        },
+        {
+            fileName:"6.txt",
+            fileSize:5000
+        }
+    ]);
+
+
+
+</script>
+</body>
+</html>

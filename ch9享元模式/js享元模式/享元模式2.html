@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 50种男士衣服和50种女士衣服，需要模特穿上拍照；
+    // 只采用 男女两种模特
+
+    function Model(sex,underware){
+        this.sex = sex;   //内部状态
+    }
+    Model.prototype.takePhoto = function(){
+        console.log("sex: "+this.sex+" underware : "+this.underware);
+    }
+    var maleModel = new Model("male"),
+            femaleModel = new Model("female");
+
+    for(var i=0;i<50;i++){
+        maleModel.underware = "underware "+i;  //外部状态
+        maleModel.takePhoto();
+    }
+    for(var i=0;i<50;i++){
+        femaleModel.underware = "underware "+i; //外部状态
+        femaleModel.takePhoto();
+    }
+
+</script>
+</body>
+</html>

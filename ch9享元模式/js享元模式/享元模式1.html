@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 50种男士衣服和50种女士衣服，需要模特穿上拍照；
+    // 采用50个男模特和50个女模特分别穿上拍照--------产生的类似对象太多
+
+    function Model(sex,underware){
+        this.sex = sex;
+        this.underware = underware;
+    }
+    Model.prototype.takePhoto = function(){
+        console.log("sex: "+this.sex+" underware : "+this.underware);
+    }
+
+    for(var i=0;i<50;i++){
+        var maleModel = new Model("male","underware"+i);
+        maleModel.takePhoto();
+    }
+    for(var i=0;i<50;i++){
+        var femaleModel = new Model("female","underware"+i);
+        femaleModel.takePhoto();
+    }
+
+</script>
+</body>
+</html>

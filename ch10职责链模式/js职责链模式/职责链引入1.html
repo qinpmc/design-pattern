@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 正常的if else 结构
+    // 难以阅读     可能需要经常修改
+
+    var order = function(type,pay,stock){
+        if(type===1){
+            if(pay===true){
+                console.log("500元定金预购，获得100元优惠券");
+            }else{
+                if(stock>0){
+                    console.log("普通购买");
+                }else{
+                    console.log("库存不足");
+                }
+            }
+        }else if(type===2){
+            if(pay===true){
+                console.log("200元定金预购，得到50元优惠券");
+            }else{
+                if(stock>0){
+                    console.log("普通购买");
+                }else{
+                    console.log("库存不足");
+                }
+            }
+        }else if(type===3){
+            if(stock>0){
+                console.log("普通购买");
+            }else{
+                console.log("库存不足");
+            }
+        }
+    }
+
+    order(1,true,500); //500元定金预购，获得100元优惠券
+</script>
+</body>
+</html>

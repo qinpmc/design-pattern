@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    Function.prototype.after = function(fn){
+        var self = this;
+        return function (){
+            var ret = self.apply(this,arguments);
+            if(ret ==="nextSuccessor"){
+                return fn.apply(this,arguments);
+            }
+            return ret;
+        }
+    }
+
+    var Chain = function(fn){
+        this.fn = fn;
+        this.successor = null;  //也是一个Chain 对象
+    }
+    Chain.prototype.setNextSuccessor = function(successor){
+        return this.successor = successor;
+    }
+    Chain.prototype.passRequest = function () {
+        var ret = this.fn.apply(this,arguments);
+        if(ret ==="nextSuccessor"){
+            return this.successor && this.successor.passRequest.apply(this.successor,arguments);
+        }
+        return ret;
+    }
+
+    var order500 = function(type,pay,stock){
+        if(type===1 && pay ===true){
+            console.log("500元定金预购，获得100元优惠券");
+        }else{
+            return "nextSuccessor";
+        }
+    }
+
+    var order200 = function(type,pay,stock){
+        if(type===2 && pay ===true){
+            console.log("200元定金预购，得到50元优惠券");
+        }else{
+            return "nextSuccessor";
+        }
+    }
+
+    var orderNormal = function(type,pay,stock){
+        if(stock>0){
+            console.log("普通购买");
+        }else{
+            console.log("库存不足");
+        }
+    }
+    //var chainOrder500 = new Chain(order500);
+    //var chainOrder200 = new Chain(order200);
+    //var chainOrderNormal = new Chain(orderNormal);
+    var order = order500.after(order200).after(orderNormal);
+    order(2,true,1);
+    order(1,false,0);
+</script>
+</body>
+</html>

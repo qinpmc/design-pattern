@@ -50,8 +50,8 @@
     var chainOrder500 = new Chain(order500);
     var chainOrder200 = new Chain(order200);
     var chainOrderNormal = new Chain(orderNormal);
-    chainOrder500.setNextSuccessor(chainOrder200);
-    chainOrder200.setNextSuccessor(chainOrderNormal);
+    chainOrder500.setNextSuccessor(chainOrder200).setNextSuccessor(chainOrderNormal);
+    //chainOrder200.setNextSuccessor(chainOrderNormal);
     chainOrder500.passRequest(3,false,0);
 </script>
 </body>

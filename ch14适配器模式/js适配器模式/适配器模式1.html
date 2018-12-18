@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var getGuangdongCity = function(){
+        var guangdongCity = [
+            {
+                name:"shenzhen",
+                id:11
+            },
+            {
+                name:"广州",
+                id:12
+            },
+        ];
+        return guangdongCity;
+    }
+
+    var render = function(fn){
+        console.log("开始渲染地图");
+        document.write(JSON.stringify(fn()));
+    }
+    render(getGuangdongCity);
+
+    var newGuangdongCity = {
+        shenzhen:11,
+        guangzhou:12
+    }
+
+    var addressAdapter = function(oldAddressfn){
+        var address = {},
+                1
+    }
+</script>
+</body>
+</html>

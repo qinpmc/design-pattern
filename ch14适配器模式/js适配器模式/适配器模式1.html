@@ -24,8 +24,9 @@
         console.log("开始渲染地图");
         document.write(JSON.stringify(fn()));
     }
-    render(getGuangdongCity);
+    //render(getGuangdongCity);
 
+    //新的数据结构
     var newGuangdongCity = {
         shenzhen:11,
         guangzhou:12
@@ -33,8 +34,16 @@
 
     var addressAdapter = function(oldAddressfn){
         var address = {},
-                1
+                oldAddress = oldAddressfn();
+        for(var i= 0,c;c=oldAddress[i++];){
+            address[c.name]  = c.id;   //旧的数据结构转换成新的数据结构
+        }
+        return function (){
+            return address;
+        }
     }
+
+    render(addressAdapter(getGuangdongCity));
 </script>
 </body>
 </html>

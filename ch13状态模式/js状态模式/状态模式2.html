@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    var OffLightState = function(light){
+        this.light = light;
+    }
+    OffLightState.prototype.buttonPressed = function(){
+        console.log("弱光");
+        this.light.setState(this.light.WeakLightState);
+    }
+
+    var WeakLightState = function(light){
+        this.light = light;
+    }
+    WeakLightState.prototype.buttonPressed = function(){
+        console.log("强光");
+        this.light.setState(this.light.StrongLightState);
+    }
+
+    var StrongLightState = function(light){
+        this.light = light;
+    }
+    StrongLightState.prototype.buttonPressed = function(){
+        console.log("关灯");
+        this.light.setState(this.light.OffLightState);
+    }
+
+    var Light = function() {
+        this.OffLightState = new OffLightState(this);
+        this.WeakLightState = new WeakLightState(this);
+        this.StrongLightState = new StrongLightState(this);
+        this.button = null;
+    }
+
+    Light.prototype.setState = function(newState){
+        this.curState = newState;
+    }
+    Light.prototype.init = function(){
+        var button = document.createElement("button"),
+                self = this;
+        button.innerHTML = "开关";
+        this.button = document.body.appendChild(button);
+        this.curState = this.OffLightState;
+        this.button.onclick = function () {
+            self.curState.buttonPressed();
+        }
+    }
+    var light = new Light();
+    light.init();
+
+</script>
+</body>
+</html>

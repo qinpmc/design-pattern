@@ -15,7 +15,7 @@
             this.clientList[key].push(fn);
         },
         trigger:function(){
-            var key = Array.prototype.shift.call(arguments); // 去除key
+            var key = Array.prototype.shift.call(arguments); // 取出key
             var fns = this.clientList[key];
             if(!key || fns.length==0 ){
                 return false;

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    Function.prototype.before = function(beforefn){
+        var self = this;
+        return function (){
+            beforefn.apply(this,arguments);
+            return self.apply(this,arguments);
+        }
+    }
+
+    var func = function(param){
+        console.log(param);
+    }
+
+    func = func.before(function(param){
+        param.b = "b";
+    })
+
+    func({a:"a"});
+/*    {
+        a: "a"
+        b: "b"
+    }*/
+</script>
+</body>
+</html>

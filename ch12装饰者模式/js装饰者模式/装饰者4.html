@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var tree = {};
+    tree.decorate = function(){
+        console.log("original tree");
+    }
+
+    tree.RedBalls = function(){
+        this.decorate = function(){
+            this.RedBalls.prototype.decorate();
+            console.log("red balls");
+        }
+    }
+    tree.BlueBalls = function(){
+        this.decorate = function(){
+            this.BlueBalls.prototype.decorate();
+            console.log("blue balls");
+        }
+    }
+    tree.getDecorator = function(deco){
+        tree[deco].prototype = this;
+        return new tree[deco];
+    }
+    tree = tree.getDecorator("BlueBalls");
+    tree = tree.getDecorator("RedBalls");
+    tree.decorate();
+</script>
+</body>
+</html>

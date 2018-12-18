@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b04486b1-9595-4872-b5c3-47420edf9d88" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch11中介者模式/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch11中介者模式/js中介者模式/中介者模式2 .html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch11中介者模式/js中介者模式/中介者模式3.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch11中介者模式/js中介者模式/中介者模式引入1.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch11中介者模式/js中介者模式/中介者模式4.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch12装饰者模式/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch12装饰者模式/js装饰者模式/装饰者4.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch12装饰者模式/js装饰者模式/装饰者模式1.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch12装饰者模式/js装饰者模式/装饰者模式2.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ch12装饰者模式/js装饰者模式/装饰者模式3.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch5发布订阅模式/js发布订阅模式/发布订阅3.html" afterPath="$PROJECT_DIR$/ch5发布订阅模式/js发布订阅模式/发布订阅3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch5发布订阅模式/js发布订阅模式/发布订阅5.html" afterPath="$PROJECT_DIR$/ch5发布订阅模式/js发布订阅模式/发布订阅5.html" />
     </list>
     <ignored path="design pattern.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,31 +31,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="中介者模式引入1.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ch11中介者模式/js中介者模式/中介者模式引入1.html">
+      <file leaf-file-name="装饰者4.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ch12装饰者模式/js装饰者模式/装饰者4.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.794117">
-              <caret line="74" column="4" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
+            <state vertical-scroll-proportion="-18.382353">
+              <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="中介者模式2 .html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ch11中介者模式/js中介者模式/中介者模式2 .html">
+      <file leaf-file-name="发布订阅2.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ch5发布订阅模式/js发布订阅模式/发布订阅2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-52.088234">
-              <caret line="73" column="31" selection-start-line="73" selection-start-column="26" selection-end-line="73" selection-end-column="31" />
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="中介者模式3.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ch11中介者模式/js中介者模式/中介者模式3.html">
+      <file leaf-file-name="发布订阅3.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ch5发布订阅模式/js发布订阅模式/发布订阅3.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.4920828">
-              <caret line="83" column="40" selection-start-line="83" selection-start-column="40" selection-end-line="83" selection-end-column="40" />
+            <state vertical-scroll-proportion="8.088235">
+              <caret line="22" column="34" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="发布订阅5.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ch5发布订阅模式/js发布订阅模式/发布订阅5.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.06090134">
+              <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="发布订阅4.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ch5发布订阅模式/js发布订阅模式/发布订阅4.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="15.441176">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -94,6 +118,14 @@
         <option value="$PROJECT_DIR$/ch11中介者模式/js中介者模式/1中介者模式引入.html" />
         <option value="$PROJECT_DIR$/ch11中介者模式/js中介者模式/中介者模式2 .html" />
         <option value="$PROJECT_DIR$/ch11中介者模式/js中介者模式/中介者模式3.html" />
+        <option value="$PROJECT_DIR$/ch11中介者模式/js中介者模式/中介者模式4.html" />
+        <option value="$PROJECT_DIR$/ch12装饰者模式/README.md" />
+        <option value="$PROJECT_DIR$/ch12装饰者模式/js装饰者模式/装饰者模式1.html" />
+        <option value="$PROJECT_DIR$/ch12装饰者模式/js装饰者模式/装饰者模式2.html" />
+        <option value="$PROJECT_DIR$/ch12装饰者模式/js装饰者模式/装饰者模式3.html" />
+        <option value="$PROJECT_DIR$/ch12装饰者模式/js装饰者模式/装饰者4.html" />
+        <option value="$PROJECT_DIR$/ch5发布订阅模式/js发布订阅模式/发布订阅3.html" />
+        <option value="$PROJECT_DIR$/ch5发布订阅模式/js发布订阅模式/发布订阅5.html" />
       </list>
     </option>
   </component>
@@ -162,7 +194,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ch11中介者模式" />
+              <option name="myItemId" value="ch12装饰者模式" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -176,11 +208,39 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ch11中介者模式" />
+              <option name="myItemId" value="ch5发布订阅模式" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="design pattern" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="design-pattern" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js中介者模式" />
+              <option name="myItemId" value="ch5发布订阅模式" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js发布订阅模式" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="design pattern" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="design-pattern" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ch3代理模式" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -194,17 +254,18 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://F:/notes/design-pattern/ch2策略模式/js策略模式/策略模式3.html" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\qinpmc\note\design pattern\ch5发布订阅模式\js发布订阅模式" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\notes\design-pattern\ch12装饰者模式" />
       <recent name="F:\notes\design-pattern\ch11中介者模式\js中介者模式" />
       <recent name="F:\notes\design-pattern\ch11中介者模式" />
       <recent name="E:\qinpmc\note\design pattern\ch10职责链模式\js职责链模式" />
       <recent name="E:\qinpmc\note\design pattern\ch10职责链模式" />
-      <recent name="F:\notes\design-pattern\ch9享元模式\js享元模式" />
     </key>
   </component>
   <component name="RunManager">
@@ -308,30 +369,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ch10职责链模式/js职责链模式/职责链2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="19" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ch10职责链模式/js职责链模式/AOP实现职责链.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ch9享元模式/README.md" />
-    <entry file="file://$PROJECT_DIR$/ch0预备知识/函数高阶6.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ch0预备知识/函数高阶5.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -440,20 +477,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.125">
           <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ch2策略模式/js策略模式/JavaScript策略模式2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ch2策略模式/js策略模式/策略模式3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="38" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -616,8 +639,107 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ch11中介者模式/js中介者模式/中介者模式3.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.4920828">
-          <caret line="83" column="40" selection-start-line="83" selection-start-column="40" selection-end-line="83" selection-end-column="40" />
+        <state vertical-scroll-proportion="-13.8529415">
+          <caret line="29" column="10" selection-start-line="20" selection-start-column="8" selection-end-line="29" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch11中介者模式/js中介者模式/中介者模式4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.441176">
+          <caret line="81" column="28" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch12装饰者模式/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor vertical-scroll-proportion="0.12150668">
+            <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch12装饰者模式/js装饰者模式/装饰者模式1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.7352941">
+          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch12装饰者模式/js装饰者模式/装饰者模式2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="9.558824">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch12装饰者模式/js装饰者模式/装饰者模式3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.7647057">
+          <caret line="25" column="2" selection-start-line="25" selection-start-column="0" selection-end-line="28" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch2策略模式/js策略模式/JavaScript策略模式2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="8.823529">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch2策略模式/js策略模式/策略模式3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.2058823">
+          <caret line="64" column="25" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch12装饰者模式/js装饰者模式/装饰者4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.382353">
+          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch5发布订阅模式/js发布订阅模式/发布订阅2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch5发布订阅模式/js发布订阅模式/发布订阅4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="15.441176">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch5发布订阅模式/js发布订阅模式/发布订阅3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="8.088235">
+          <caret line="22" column="34" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch5发布订阅模式/js发布订阅模式/发布订阅5.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06090134">
+          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
           <folding />
         </state>
       </provider>

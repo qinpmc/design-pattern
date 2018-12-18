@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    选择颜色:
+    <select id="colorSelect">
+        <option value="">请选择</option>
+        <option value="red">红色</option>
+        <option value="blue">蓝色</option>
+    </select>
+    输入购买数量:
+    <input type="text" id="numberInput"/>
+    您选择了颜色:
+    <div id="colorInfo"></div><br/>
+    您输入了数量:  <div id="numberInfo"></div><br/>
+    <button id="nextBtn" disabled="true">请选择手机颜色和购买数量</button>
+    <script>
+        var colorSelect = document.getElementById('colorSelect'),
+                numberInput = document.getElementById('numberInput'),
+                colorInfo = document.getElementById('colorInfo'),
+                numberInfo = document.getElementById('numberInfo'),
+                nextBtn = document.getElementById('nextBtn');
+        // 手机库存
+        var goods = {
+            "red": 3,
+            "blue": 6
+        };
+
+        colorSelect.onchange = function () {
+            var color = this.value,
+                    number = numberInput.value,
+                    stock = goods[color];
+            colorInfo.innerHTML = color;
+            if (!color) {
+                nextBtn.disabled = true;
+                nextBtn.innerHTML = '请选择手机颜色';
+                return;
+            }
+
+            if (( ( number - 0 ) | 0 )  !== number - 0) {
+                nextBtn.disabled = true;
+                nextBtn.innerHTML = '请输入正确的购买数量';
+                return;
+            }
+
+            if (number > stock) {
+                nextBtn.disabled = true;
+                nextBtn.innerHTML = '库存不足';
+                return;
+            }
+
+            nextBtn.disabled = false;
+            nextBtn.innerHTML = '放入购物车';
+
+        };
+
+        numberInput.oninput = function () {
+            var color = colorSelect.value,
+                    number = this.value,
+                    stock = goods[color];
+            numberInfo.innerHTML = number;
+
+            if (!color) {
+                nextBtn.disabled = true;
+                nextBtn.innerHTML = '请选择手机颜色';
+                return;
+            }
+
+            if (( ( number - 0 ) | 0 )  !== number - 0) {
+                nextBtn.disabled = true;
+                nextBtn.innerHTML = '请输入正确的购买数量';
+                return;
+            }
+            if (number > stock) {
+                nextBtn.disabled = true;
+                nextBtn.innerHTML = '库存不足';
+                return;
+            }
+
+            nextBtn.disabled = false;
+            nextBtn.innerHTML = '放入购物车';
+
+        }
+
+
+    </script>
+</body>
+</html>

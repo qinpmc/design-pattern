@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function Player(name,teamColor){
+        this.state = "live";
+        this.name = name;
+        this.teamColor = teamColor;
+    }
+
+    Player.prototype.win = function(){
+        // 玩家团队胜利
+        console.log( 'winner: ' + this.name );
+    };
+
+    Player.prototype.lose = function(){
+        // 玩家团队失败
+        console.log( 'loser: ' + this.name );
+    }
+    //玩家死亡
+    Player.prototype.die = function(){
+        this.state = "dead";
+        playerDirector.receiveMessage("playerDead",this);
+    }
+    //玩家掉线
+    Player.prototype.remove = function(){
+        playerDirector.receiveMessage("removePlayer",this);
+    }
+    //玩家换队伍
+    Player.prototype.changeTeam = function(color){
+        playerDirector.receiveMessage("changeTeam",this,color);
+    }
+    var playerFactory = function(name,teamColor){
+        var newPlayer = new Player(name,teamColor);
+        playerDirector.receiveMessage("addPlayer",newPlayer);
+        return newPlayer;
+    }
+    var playerDirector = (function(){
+        var players = {},
+                operations = {};
+
+        //新增玩家
+        operations.addPlayer = function(player){
+            var teamColor = player.teamColor;
+            players[teamColor] = players[teamColor] || [];
+            players[teamColor].push(player);
+        }
+        //移除玩家
+        operations.removePlayer = function(player){
+            var teamColor = player.teamColor;
+            var teamPlayers = players[teamColor] || [];
+            for(var i= teamPlayers.length-1;i>=0;i--){
+                if(teamPlayers[i]===player){
+                    teamPlayers.splice(i,1);
+                }
+            }
+        }
+        //
+        operations.changeTeam = function(player,newColor){
+            operations.removePlayer(player);
+            player.teamColor = newColor;
+            operations.addPlayer(player);
+        }
+        operations.playerDead = function(player){
+            var all_dead = true;
+            var teamColor = player.teamColor;
+            var teamPlayers = players[teamColor];
+            for(var i= 0,player;player=teamPlayers[i++];){
+                if(player.state!=="dead"){
+                    all_dead = false;
+                    break;
+                }
+            }
+            if(all_dead===true){
+                for (var i= 0,player;player=teamPlayers[i++];){
+                    player.lose();
+                }
+                for(var color in players){
+                    if(color!==teamColor){
+                        var teamPlayers = players[color];
+                        for(var i= 0,player;player=teamPlayers[i++];){
+                            player.win();
+                        }
+                    }
+                }
+            }
+        }
+        var receiveMessage = function(){
+            var msg = Array.prototype.shift.call(arguments);
+            operations[msg].apply(this,arguments);
+        }
+        return {
+            receiveMessage:receiveMessage
+        }
+
+    })()
+
+    //红队：
+    var player1 = playerFactory( '皮蛋', 'red' ),
+            player2 = playerFactory( '小乖', 'red' ),
+            player3 = playerFactory( '宝宝', 'red' ),
+            player4 = playerFactory( '小强', 'red' );
+
+    //蓝队：
+    var player5 = playerFactory( '黑妞', 'blue' ),
+            player6 = playerFactory( '葱头', 'blue' ),
+            player7 = playerFactory( '胖墩', 'blue' ),
+            player8 = playerFactory( '海盗', 'blue' );
+
+/*    player1.die();
+    player2.die();
+    player3.die();
+    player4.die();*/
+    player1.remove();
+    player2.remove()
+    player3.die();
+    player4.die();
+
+</script>
+</body>
+</html>

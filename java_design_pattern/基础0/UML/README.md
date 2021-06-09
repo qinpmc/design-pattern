@@ -5,4 +5,4 @@
 
 常见 UML 关系图如下：
 
-![UML 图](./uml关系图.png)
+![UML 图](uml关系图.png)

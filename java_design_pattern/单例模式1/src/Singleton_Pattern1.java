@@ -1,4 +1,5 @@
-package 单例设计模式_2;
+package 单例模式1;
+
 
 public class Singleton_Pattern1 {
     public static void main(String[] args) {
@@ -10,6 +11,7 @@ public class Singleton_Pattern1 {
     }
 }
 
+// 饿汉式
 class SingleObject {
 
     //创建 SingleObject 的一个对象

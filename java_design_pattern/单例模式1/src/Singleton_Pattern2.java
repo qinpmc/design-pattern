@@ -1,4 +1,4 @@
-package 单例设计模式_2;
+package 单例模式1;
 
 public class Singleton_Pattern2 {
     public static void main(String[] args) {
@@ -9,6 +9,7 @@ public class Singleton_Pattern2 {
         object.showMessage();
     }
 }
+// 懒汉式，线程安全
  class Singleton {
     private static Singleton instance;
     private Singleton (){}

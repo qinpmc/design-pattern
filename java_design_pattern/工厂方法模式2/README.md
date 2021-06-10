@@ -55,6 +55,18 @@ public class FileOperateA {
 
 ## 工厂模式
 
+工厂方法模式使用的频率非常高， 其定义为：
+Define an interface for creating an object,but let subclasses decide which class to
+instantiate.Factory Method lets a class defer instantiation to subclasses.
+定义一个用于创建对象的接口，让子类决定实例化哪一个类。工厂方法使一个类的实例化延迟到其子类。
+
+在数据库开发中，大家应该能够深刻体会到工厂方法模式的好处：如果使用JDBC连接数据库，数据库从MySQL切换到Oracle，需要改动的地方就是切换一下驱动名称（前提
+条件是SQL语句是标准语句），其他的都不需要修改，这是工厂方法模式灵活性的一个直接案例。
+
+例如需要设计一个连接邮件服务器的框架，有三种网络协议可供选择：POP3、IMAP、HTTP，我们就可以把这三种连接方法作为产品类，定义一个接口如IConnectMail，   
+然后定义对邮件的操作方法，用不同的方法实现三个具体的产品类（也就是连接方式）再定义一个工厂方法，按照不同的传入条件，选择不同的连接方式。
+
+
 简单/静态工厂模式是在工厂方法模式上缩减，抽象工厂模式是在工厂方法模式上再增强。
 
 1. 工厂接口及实现类
@@ -174,8 +186,88 @@ cat.eat();
 
 ## 抽象工厂模式
  
+```
+public interface AnimalFactory {
+	Animal createDog();
+	Animal createCat();
+}
 
 
+```
+
+创建母猫和母狗的工厂：
+
+``` 
+
+public class FemaleAnimalFactory implements AnimalFactory {
+
+    // 生产母狗和母猫
+    @Override
+    public Animal createDog() {
+        return  new FemaleDog();
+    }
+
+    @Override
+    public Animal createCat() {
+        return new FemaleCat();
+    }
+
+}
+
+```
+
+
+创建公猫和公狗的工厂：
+
+```
+public class MaleAnimalFactory implements AnimalFactory {
+    
+    // 生产公狗和公猫
+
+    @Override
+    public Animal createDog() {
+        return new MaleDog();
+    }
+
+    @Override
+    public Animal createCat() {
+        return new MaleCat();
+    }
+
+}
+```
+
+使用：
+
+```
+public static void main(String[] args) {
+
+
+        // 需要性别为母的就去找母工厂
+        AnimalFactory af = new FemaleAnimalFactory();
+
+        // 需要一只母猫
+        af.createCat().gender();
+
+        // 需要一只母狗
+        af.createDog().gender();
+
+       
+
+        // 需要性别为公的就去找公工厂
+        AnimalFactory aff = new MaleAnimalFactory();
+
+        // 需要一只公狗
+        aff.createDog().gender();
+
+        // 需要一只公猫
+        aff.createCat().gender();
+
+    }
+
+```
+
+简单来说：**工厂方法**模式的工厂是创建出**一种产品**，而**抽象工厂**是创建出**一类产品（产品族）**;
 
 
 

@@ -3,6 +3,8 @@
  
 - 设计模式之禅
 
+## 模板方法定义
+
 模板方法模式（Template Method Pattern）定义如下：
 Define the skeleton of an algorithm in an operation,deferring some steps to subclasses.Template
 Method lets subclasses redefine certain steps of an algorithm without changing the algorithm's

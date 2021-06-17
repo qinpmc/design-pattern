@@ -5,11 +5,27 @@
 - https://zhuanlan.zhihu.com/p/266392844
 - https://zhuanlan.zhihu.com/p/58093669
 - https://www.jianshu.com/p/3d1c9ffb0a28
+- https://blog.csdn.net/ljcitworld/article/details/80387378
+
+
+## 建造者模式定义
 
 建造者模式（Builder Pattern）也叫做生成器模式，其定义如下：
 Separate the construction of a complex object from its representation so that the same
 construction process can create different representations.
 将一个**复杂对象**的**构建与它的表示分离**，使得同样的构建过程可以创建不同的表示。
+
+## 建造者模式类图
+
+![build类图](build类图.png)
+
+- 指挥者（Director）直接和客户（Client）进行需求沟通；
+- 沟通后指挥者将客户创建产品的需求划分为各个部件的建造请求（Builder）；
+- 将各个部件的建造请求委派到具体的建造者（ConcreteBuilder）；
+- 各个具体建造者负责进行产品部件的构建,最终构建成具体产品（Product）。
+ 
+Client => 使用  Director => 调用 ConcreteBuilder的方法  
+
 
 ## 建造者模式的使用场景：
 - 相同的方法，不同的执行顺序，产生不同的事件结果时，可以采用建造者模式。
@@ -27,14 +43,7 @@ construction process can create different representations.
 - 2、建造者模式根据不同的产品零件和顺序可以创造出不同的产品，而工厂模式创建出来的产品都是一样的
 - 3、建造者模式使用者需要知道这个产品有哪些零件组成，而工厂模式的使用者不需要知道，直接创建就行
 
-## 建造者模式类图
 
-![build类图](build类图.png)
-
-- 指挥者（Director）直接和客户（Client）进行需求沟通；
-- 沟通后指挥者将客户创建产品的需求划分为各个部件的建造请求（Builder）；
-- 将各个部件的建造请求委派到具体的建造者（ConcreteBuilder）；
-- 各个具体建造者负责进行产品部件的构建,最终构建成具体产品（Product）。
  
 ## 示例
 用 builder 模式创建共享单车为例子：build1
@@ -179,7 +188,19 @@ public abstract class NewBuilder {
 ![SqlSessionFactoryBuiler 图](SqlSessionFactoryBuiler.jpg)
 
 
+3、Android的AlertDialog ：
 
+```
+  AlertDialog dialog = new AlertDialog.Builder(getContext())
+              .setTitle("标题")
+              .setMessage("内容")
+              .setPositiveButton("确定", null)
+              .setPositiveButton("取消", null)
+              .create();
+  dialog.show();
+```
+
+ 
 
 
 

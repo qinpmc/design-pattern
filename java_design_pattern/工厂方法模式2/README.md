@@ -55,7 +55,7 @@ public class FileOperateA {
 
 ```
 
-## 工厂模式
+## 工厂模式定义
 
 工厂方法模式使用的频率非常高， 其定义为：
 Define an interface for creating an object,but let subclasses decide which class to

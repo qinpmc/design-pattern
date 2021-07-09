@@ -110,7 +110,9 @@ public class DogFactory implements AnimalFactory {
 
 	// 所有的动物都会吃东西
 	public abstract void eat();
-}猫实体类：public class Cat extends Animal {
+}
+
+猫实体类：public class Cat extends Animal {
 	
 	// 猫喜欢吃鱼
 	@Override
@@ -118,7 +120,9 @@ public class DogFactory implements AnimalFactory {
 		System.out.println("猫吃鱼");
 	}
 
-}狗实体类：public class Dog extends Animal {
+}
+
+狗实体类：public class Dog extends Animal {
 
 	// 狗喜欢吃肉
 	@Override

@@ -15,10 +15,13 @@ structure.
 
 
 public abstract class AbstractClass {
-    //基本方法
+
+    //基本方法 -- 预留给子类重写
     protected abstract void doSomething();
-    //基本方法
+
+    //基本方法 -- 预留给子类重写
     protected abstract void doAnything();
+
     //模板方法
     public void templateMethod(){
         /*
@@ -31,10 +34,12 @@ public abstract class AbstractClass {
  
 ```
 public class ConcreteClass1 extends AbstractClass {
-    //实现基本方法
+    // 子类 ConcreteClass1 重写
     protected void doAnything() {
     //业务逻辑处理
     }
+    
+    // --子类 ConcreteClass1 重写
     protected void doSomething() {
     //业务逻辑处理
     }
@@ -42,10 +47,13 @@ public class ConcreteClass1 extends AbstractClass {
 
 
 public class ConcreteClass2 extends AbstractClass {
-    //实现基本方法
+   
+    // --子类 ConcreteClass2 重写
     protected void doAnything() {
     //业务逻辑处理
     }
+    
+    //  --子类 ConcreteClass2 重写
     protected void doSomething() {
     //业务逻辑处理
     }

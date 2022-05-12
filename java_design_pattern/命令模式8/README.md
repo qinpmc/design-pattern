@@ -1,5 +1,5 @@
 
-# 工厂模式
+# 命令模式
 
 - https://stackoverflow.com/questions/32597736/why-should-i-use-the-command-design-pattern-while-i-can-easily-call-required-met
 - https://www.geeksforgeeks.org/command-pattern/

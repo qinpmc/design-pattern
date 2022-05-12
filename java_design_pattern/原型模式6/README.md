@@ -25,7 +25,14 @@ Specify the kinds of objects to create using a prototypical instance,and create 
 
 
 
+原型模式适用场景 (https://blog.csdn.net/qq_40709468/article/details/82316418): 
+ 
+ -1 创建对象成本比较大，比如初始化要很长时间的，占用太多CPU的，新对象可以通过复制已有的对象获得的，如果是相似的对象，则可以对其成员变量稍作修改。
 
+ -2 系统要保存对象状态的，而对象的状态改变很小。
+
+- 3 需要避免使用分层次的工厂类来创建分层次的对象，并且类的对象就只用一个或很少的组合状态！
+ 
 
 
 

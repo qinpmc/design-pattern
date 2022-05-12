@@ -55,6 +55,60 @@ public class FileOperateA {
 
 ```
 
+
+##  简单/静态工厂模式
+又名静态方法模式，是由一个工厂对象决定创建出哪一种产品类的实例。
+
+```
+// 手机的基类
+
+interface IPhone {
+    void call();
+}
+// 小米、华为两个手机类
+
+class MiPhone implements IPhone {
+    @Override
+    public void call() {}
+}
+
+class HwPhone implements IPhone {
+    @Override
+    public void call() {}
+}
+
+//创建一个简单工厂类
+class PhoneFactory {
+    public static IPhone phone;
+    public static IPhone produce(String phoneType) {
+        switch (phoneType) {
+            case "mi":
+                phone = new MiPhone();
+                break;
+            case "huawei":
+                phone = new HwPhone();
+                break;
+            default:
+                phone = null;
+        }
+        return phone;
+    }
+}
+ 
+
+
+```
+ 
+使用：传入不同的字符串来调用工厂类的静态方法创建不同具体产品类的实例
+ 
+```
+IPhone miPhone = PhoneFactory.produce("mi");
+IPhone HwPhone = PhoneFactory.produce("huawei");
+ 
+```
+ 
+
+
 ## 工厂模式定义
 
 工厂方法模式使用的频率非常高， 其定义为：
@@ -71,177 +125,152 @@ instantiate.Factory Method lets a class defer instantiation to subclasses.
 
 简单/静态工厂模式是在工厂方法模式上缩减，抽象工厂模式是在工厂方法模式上再增强。
 
-1. 工厂接口及实现类
-```
-public interface AnimalFactory {
 
-	// 可以获取任何的宠物
-	Animal createAnimal();
+
+1. 手机的基类及实现类
+```
+//手机的基类
+interface IPhone {
+    void call();
 }
 
 
-
-// 继承着宠物工厂
-public class CatFactory implements AnimalFactory {
+//小米、华为两个手机类
+class MiPhone implements IPhone {
     @Override
-    // 创建猫
-    public Animal createAnimal() {
-        return new Cat();
-    }
-
-
-}狗工厂也是一样的：// 继承着宠物工厂
-public class DogFactory implements AnimalFactory {
-
-	// 创建狗
-	@Override
-	public Animal createAnimal() {
-		return new Dog();
-	}
-
+    public void call() {}
 }
+
+class HwPhone implements IPhone {
+    @Override
+    public void call() {}
+}
+```
  
+2. 工厂接口及实现类
+
 
 ```
 
-2. 动物抽象类及实现类
-```
-动物实体类：public abstract class Animal {
-
-	// 所有的动物都会吃东西
-	public abstract void eat();
+// 工厂接口
+interface IPhoneFactory {
+    IPhone produce();
 }
 
-猫实体类：public class Cat extends Animal {
-	
-	// 猫喜欢吃鱼
-	@Override
-	public void eat() {
-		System.out.println("猫吃鱼");
-	}
 
+// 小米手机的工厂类 
+
+class MiPhoneFactory implements IPhoneFactory {
+    @Override
+    public IPhone produce() {
+        return new MiPhone();
+    }
 }
 
-狗实体类：public class Dog extends Animal {
-
-	// 狗喜欢吃肉
-	@Override
-	public void eat() {
-		System.out.println("狗吃肉");
-	}
-
+//  华为手机的工厂类 
+class HwPhoneFactory implements IPhoneFactory {
+    @Override
+    public IPhone produce() {
+        return new HwPhone();
+    }
 }
  
 ```
 使用工厂创建对象：
 
 ```
-//  创建狗工厂
-AnimalFactory df = new DogFactory();
-//  创建狗
-Animal dog = df.createAnimal();
-dog.eat();
- 
-// 创建猫工厂
-AnimalFactory cf = new CatFactory();
-// 创建猫
-Animal cat = cf.createAnimal();
-cat.eat();
+IPhone miPhone = new MiPhoneFactory().produce();
+IPhone hwPhone = new HwPhoneFactory().produce();
 
 ```
 
  
 
-##  简单/静态工厂模式
 
-```
-public class AnimalFactory {
-    public static Dog createDog() {
-        return new Dog();
-    }
-
-    public static Cat createCat() {
-        return new Cat();
-    }
-
-
-    // 外界想要猫要狗，这里创建就好了
-    public static Animal createAnimal(String type) {
-        if ("dog".equals(type)) {
-            return new Dog();
-        } else if ("cat".equals(type)) {
-            return new Cat();
-        } else {
-            return null;
-        }
-    }
-}
-```
- 
-```
-// 拿到狗
-Animal dog = AnimalFactory.createAnimal("dog");
-dog.eat();
-
-// 拿到猫
-Animal cat = AnimalFactory.createAnimal("cat");
-cat.eat();
- 
-```
- 
 
 ## 抽象工厂模式
  
+为创建一组相关或相互依赖的对象提供一个接口，而且无需指定他们的具体类。
+
+这一组相关或者相互依赖的对象有一个名词来形容就是**产品族**。
+
+
+如手机和手机壳
+
 ```
-public interface AnimalFactory {
-	Animal createDog();
-	Animal createCat();
+// 手机的接口
+interface IPhone {
+    void call();
+}
+
+//小米手机类
+class MiPhone implements IPhone {
+    @Override
+    public void call() {}
+}
+
+//华为两个手机类
+class HwPhone implements IPhone {
+    @Override
+    public void call() {}
 }
 
 
+//手机套的接口
+interface IPhoneCase {
+    void call();
+}
+
+// 小米手机套类
+class MiPhoneCase implements IPhoneCase {
+    @Override
+    public void protect() {}
+}
+
+// 华为手机套类
+class HwPhoneCase implements IPhoneCase {
+    @Override
+    public void protect() {}
+}
 ```
 
-创建母猫和母狗的工厂：
+创建生产小米手机的工厂类和生产华为手机的工厂类:
 
 ``` 
 
-public class FemaleAnimalFactory implements AnimalFactory {
+interface IPhoneFactory {
+    IPhone producePhone();
+    IPhoneCase producePhoneCase();
+}
 
-    // 生产母狗和母猫
+// 小米手机工厂
+class MiPhoneFactory implements IPhoneFactory {
     @Override
-    public Animal createDog() {
-        return  new FemaleDog();
+    public IPhone producePhone() {
+        return new MiPhone();
     }
-
     @Override
-    public Animal createCat() {
-        return new FemaleCat();
+    public IPhoneCase producePhoneCase() {
+        return new MiPhoneCase();
     }
+}
 
+// 华为手机工厂
+class HwPhoneFactory implements IPhoneFactory {
+    @Override
+    public IPhone producePhone() {
+        return new HwPhone();
+    }
+    @Override
+    public IPhoneCase producePhoneCase() {
+        return new HwPhoneCase();
+    }
 }
 
 ```
 
 
-创建公猫和公狗的工厂：
-
-```
-public class MaleAnimalFactory implements AnimalFactory {
-    
-    // 生产公狗和公猫
-
-    @Override
-    public Animal createDog() {
-        return new MaleDog();
-    }
-
-    @Override
-    public Animal createCat() {
-        return new MaleCat();
-    }
-
-}
-```
+ 
 
 使用：
 
@@ -249,25 +278,16 @@ public class MaleAnimalFactory implements AnimalFactory {
 public static void main(String[] args) {
 
 
-        // 需要性别为母的就去找母工厂
-        AnimalFactory af = new FemaleAnimalFactory();
-
-        // 需要一只母猫
-        af.createCat().gender();
-
-        // 需要一只母狗
-        af.createDog().gender();
-
+        //生产小米手机和手机壳
+        IPhoneFactory xm = new MiPhoneFactory();
+        IPhone  xmPhone = xm.producePhone();
+        IPhoneCase  xmPhoneCase = xm.producePhoneCase();
        
 
-        // 需要性别为公的就去找公工厂
-        AnimalFactory aff = new MaleAnimalFactory();
-
-        // 需要一只公狗
-        aff.createDog().gender();
-
-        // 需要一只公猫
-        aff.createCat().gender();
+        //生产华为手机和手机壳
+        IPhoneFactory hw = new HwPhoneFactory();
+        IPhone  hwPhone = hw.producePhone();
+        IPhoneCase  hwPhoneCase = hw.producePhoneCase();
 
     }
 

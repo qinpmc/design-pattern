@@ -2,6 +2,7 @@
 
  
 - 设计模式之禅
+- https://zhuanlan.zhihu.com/p/143101326
 - https://zhuanlan.zhihu.com/p/266392844
 - https://zhuanlan.zhihu.com/p/58093669
 - https://www.jianshu.com/p/3d1c9ffb0a28
@@ -153,7 +154,7 @@ public class Click {
 } 
 ```
 
-！以上可以简化(director 合并到 Builder)：
+！以上可以**简化**(director 合并到 Builder)：
 
 ```
 public abstract class NewBuilder { 
@@ -204,7 +205,12 @@ public abstract class NewBuilder {
 
 
 
+建造者模式和工厂模式区别
+建造者模式优点类似于工厂模式，都是用来创建一个对象，但是他们还是有很大的区别，主要区别如下：
 
+1、建造者模式更加注重方法的调用顺序，工厂模式注重于创建完整对象
+2、建造者模式根据不同的产品零件和顺序可以创造出不同的产品，而工厂模式创建出来的产品都是一样的
+3、建造者模式使用者需要知道这个产品有哪些零件组成，而工厂模式的使用者不需要知道，直接创建就行
 
 
 

@@ -1,5 +1,8 @@
 # 责任链模式
 
+- https://blog.csdn.net/Aerfa789/article/details/123135277
+
+
 ## 定义
 责任链模式定义如下：Avoid coupling the sender of a request to its receiver by giving more than one object a chance to
 handle the request.Chain the receiving objects and pass the request along the chain until an object handles it.
